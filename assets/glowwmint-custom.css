@@ -45,9 +45,76 @@ body {
   padding-top: 0;
 }
 
-/* === HEADER — CLEAN STYLING === */
+/* === HEADER — GLASSMORPHISM EFFECT === */
+
+/* Glassy background for header rows (when not transparent) */
+.header__row {
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(255, 255, 255, 0.72) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+/* When header is sticky and scrolled, enhance the glass effect */
+.header[data-sticky-state='active'] .header__row {
+  backdrop-filter: blur(20px) saturate(200%);
+  -webkit-backdrop-filter: blur(20px) saturate(200%);
+  background-color: rgba(255, 255, 255, 0.78) !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.06);
+}
+
+/* When header is transparent (on hero pages), keep it transparent until scrolled */
+.header[transparent]:not([data-sticky-state='active']) .header__row {
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  background-color: transparent !important;
+  border-bottom-color: transparent !important;
+  box-shadow: none;
+}
+
+/* When transparent header becomes sticky on scroll, apply glass */
+.header[transparent][data-sticky-state='active'] .header__row,
+.header[transparent='not-sticky'][data-sticky-state='active'] .header__row {
+  backdrop-filter: blur(20px) saturate(200%);
+  -webkit-backdrop-filter: blur(20px) saturate(200%);
+  background-color: rgba(255, 255, 255, 0.78) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25) !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.06);
+}
+
+/* Mega menu / dropdown — also glassy */
+.header:has(.mega-menu__list:hover) .header__row,
+.header:has(.menu-list__link[aria-haspopup]:is(:hover, [aria-expanded='true'])) .header__row {
+  backdrop-filter: blur(20px) saturate(200%);
+  -webkit-backdrop-filter: blur(20px) saturate(200%);
+  background-color: rgba(255, 255, 255, 0.88) !important;
+}
+
+/* Scrolled-past shadow */
 .header.scrolled-past {
   box-shadow: var(--glow-shadow-sm);
+}
+
+/* === ABOUT US PAGE === */
+.template-page .about-us-hero {
+  text-align: center;
+  padding: 60px 20px 40px;
+}
+
+.template-page .about-us-hero h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-bottom: 16px;
+}
+
+.template-page .about-us-hero p {
+  max-width: 600px;
+  margin: 0 auto;
+  color: var(--color-foreground);
+  opacity: 0.8;
+  font-size: 1.1rem;
+  line-height: 1.6;
 }
 
 /* === PRODUCT CARD — CLEAN STYLING === */
