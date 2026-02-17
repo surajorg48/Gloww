@@ -4,48 +4,10 @@
    Brand Colors: Mint Green (#2ECC71), Deep Forest (#165230)
    ============================================================ */
 
-/* === GLOBAL OVERFLOW FIX === */
+/* === GLOBAL OVERFLOW FIX — body only === */
 html,
 body {
-  overflow-x: hidden !important;
-  max-width: 100vw;
-}
-
-* {
-  max-width: 100%;
-}
-
-/* Exclude specific elements that need their own max-width */
-img,
-video,
-iframe,
-canvas,
-svg,
-input,
-textarea,
-select,
-button,
-.section,
-.page-width-wide,
-.page-width-normal,
-.page-width-narrow {
-  max-width: 100%;
-}
-
-/* Ensure sections never cause overflow */
-.shopify-section {
   overflow-x: hidden;
-  max-width: 100vw;
-}
-
-.section {
-  overflow-x: hidden;
-}
-
-/* Fix any full-width elements that might overflow */
-.section--full-width>*,
-.section--full-width.section--full-width-margin>* {
-  max-width: 100vw;
 }
 
 /* === BRAND PALETTE VARIABLES === */
@@ -77,63 +39,15 @@ body {
   color: var(--glow-charcoal);
 }
 
-/* === ANNOUNCEMENT BAR — REMOVE TOP GAP === */
+/* === ANNOUNCEMENT BAR — REMOVE TOP GAP ONLY === */
 #header-group {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-}
-
-#header-group>.shopify-section:first-child {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-}
-
-#header-group .section {
-  margin-top: 0 !important;
-  padding-block-start: 0 !important;
-}
-
-/* The announcement bar ticker block itself */
-[data-block-type="ai_gen_block_bdb0f11"] {
-  letter-spacing: 0.05em;
+  margin-top: 0;
+  padding-top: 0;
 }
 
 /* === HEADER — CLEAN STYLING === */
-.header {
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-}
-
 .header.scrolled-past {
   box-shadow: var(--glow-shadow-sm);
-}
-
-/* Nav link underline on hover — instant, no animation */
-.header-menu__link {
-  position: relative;
-}
-
-.header-menu__link::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--glow-mint);
-  border-radius: 1px;
-}
-
-.header-menu__link:hover::after {
-  width: 100%;
-}
-
-/* === HERO SECTION === */
-.section--hero h1,
-.section--hero h2,
-.section--hero .h1,
-.section--hero .h2 {
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* === PRODUCT CARD — CLEAN STYLING === */
@@ -178,34 +92,7 @@ body {
   text-transform: uppercase;
 }
 
-/* === PRODUCT PAGE — REMOVE TOP SPACE === */
-.product-information {
-  padding-block-start: 0 !important;
-}
-
-.product-information .section {
-  padding-block-start: 0 !important;
-}
-
-/* Remove the divider gap above product info */
-.template--product .shopify-section:first-child .section {
-  padding-block-start: 0 !important;
-  padding-block-end: 0 !important;
-  min-height: 0 !important;
-}
-
-/* Product details top padding fix */
-[data-section-type="product-information"] {
-  padding-block-start: 0 !important;
-}
-
-/* Product media gallery — no top gap */
-._product-media-gallery,
-.product-information .media-gallery {
-  padding-top: 0 !important;
-  margin-top: 0 !important;
-}
-
+/* === PRODUCT PAGE MEDIA === */
 .product-information .media-gallery img {
   border-radius: 8px;
 }
@@ -243,12 +130,6 @@ body {
 }
 
 /* === COLLECTION PAGE === */
-.collection-heading h1,
-.collection-heading h2 {
-  position: relative;
-  display: inline-block;
-}
-
 .facets__button,
 .facets__pill {
   border-radius: 20px !important;
@@ -271,7 +152,7 @@ body {
       transparent);
 }
 
-/* === IMAGE WITH TEXT (ABOUT US) === */
+/* === IMAGE WITH TEXT === */
 .section .image-with-text-image {
   border-radius: 16px;
   overflow: hidden;
@@ -281,7 +162,6 @@ body {
 .accordion-custom summary,
 .accordion__heading {
   padding: 16px 0;
-  border-radius: 0;
 }
 
 .accordion-custom summary:hover,
@@ -464,18 +344,6 @@ select:focus {
     padding: 14px 0;
     font-size: 0.9375rem;
   }
-
-  .section--hero h1,
-  .section--hero .h1 {
-    font-size: clamp(1.75rem, 6vw, 2.5rem);
-  }
-}
-
-/* Tablet (750px — 999px) */
-@media screen and (min-width: 750px) and (max-width: 999px) {
-  .product-card {
-    border-radius: 10px;
-  }
 }
 
 /* === PRINT STYLES === */
@@ -538,95 +406,6 @@ select:focus {
 
 .article-card:hover {
   box-shadow: var(--glow-shadow-md);
-}
-
-/* === PASSWORD PAGE === */
-.template-password .section {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* === GIFT CARD PAGE === */
-.template-giftcard {
-  text-align: center;
-}
-
-.template-giftcard .gift-card__image {
-  border-radius: 16px;
-  box-shadow: var(--glow-shadow-lg);
-  max-width: 400px;
-  margin: 0 auto;
-}
-
-/* === ABOUT US PAGE CUSTOM STYLES === */
-.about-us-hero {
-  text-align: center;
-  padding: 60px 0 40px;
-}
-
-.about-us-hero h1 {
-  font-size: clamp(2rem, 4vw, 3rem);
-  margin-bottom: 16px;
-}
-
-.about-us-hero p {
-  max-width: 600px;
-  margin: 0 auto;
-  opacity: 0.85;
-  font-size: 1.1rem;
-  line-height: 1.7;
-}
-
-/* Trust badges styling */
-.trust-badges-section {
-  padding: 40px 0;
-  text-align: center;
-}
-
-.trust-badges-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 32px;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.trust-badge-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  padding: 24px 16px;
-  border-radius: 12px;
-  background: var(--glow-cream);
-  border: 1px solid rgba(0, 0, 0, 0.04);
-}
-
-.trust-badge-item svg {
-  width: 40px;
-  height: 40px;
-  color: var(--glow-mint-dark);
-}
-
-.trust-badge-item h4 {
-  font-size: 1rem;
-  font-weight: 600;
-  margin: 0;
-}
-
-.trust-badge-item p {
-  font-size: 0.875rem;
-  opacity: 0.7;
-  margin: 0;
-}
-
-/* === WHATSAPP WIDGET STYLING === */
-.whatsapp-widget,
-[data-app="dondy"],
-.dondy-whatsapp-widget {
-  z-index: 999 !important;
 }
 
 /* === HIGH CONTRAST MODE === */
