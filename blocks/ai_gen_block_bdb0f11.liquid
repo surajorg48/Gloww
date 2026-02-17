@@ -1,0 +1,307 @@
+{% doc %}
+  @prompt
+    Horizontal Ticker, adjust it with site make sure its fit in site fully from left and right side, increase speed a little bit, and replace all the texts with these: 🎁 Grab Exclusive Deals Before They’re Gone!, ✨ Flat 30% OFF on Bestsellers – For 24 hours Only!, 🚚 Free Shipping
+
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-ticker-container-{{ ai_gen_id }} {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    overflow: hidden;
+    background-color: {{ block.settings.background_color }};
+    padding: {{ block.settings.padding_vertical }}px 0;
+    border-top: {{ block.settings.border_width }}px solid {{ block.settings.border_color }};
+    border-bottom: {{ block.settings.border_width }}px solid {{ block.settings.border_color }};
+  }
+
+.ai-ticker-wrapper-{{ ai_gen_id }} {
+  display: flex;
+  width: fit-content;
+  animation: ai-ticker-scroll-{{ ai_gen_id }} {{ block.settings.speed }}s linear infinite;
+  white-space: nowrap;
+  will-change: transform;
+}
+
+
+  .ai-ticker-content-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .ai-ticker-item-{{ ai_gen_id }} {
+    display: inline-flex;
+    align-items: center;
+    padding: 0 {{ block.settings.item_spacing }}px;
+    color: {{ block.settings.text_color }};
+    font-size: {{ block.settings.font_size }}px;
+    font-weight: {{ block.settings.font_weight }};
+    text-transform: {{ block.settings.text_transform }};
+    white-space: nowrap;
+  }
+
+  .ai-ticker-separator-{{ ai_gen_id }} {
+    display: inline-flex;
+    align-items: center;
+    color: {{ block.settings.separator_color }};
+    font-size: {{ block.settings.font_size }}px;
+    padding: 0 {{ block.settings.separator_spacing }}px;
+  }
+
+  @keyframes ai-ticker-scroll-{{ ai_gen_id }} {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  {% if block.settings.pause_on_hover %}
+    .ai-ticker-wrapper-{{ ai_gen_id }}:hover {
+      animation-play-state: paused;
+    }
+  {% endif %}
+
+  @media screen and (max-width: 749px) {
+    .ai-ticker-item-{{ ai_gen_id }} {
+      font-size: {{ block.settings.font_size | times: 0.9 }}px;
+      padding: 0 {{ block.settings.item_spacing | times: 0.8 }}px;
+    }
+    
+    .ai-ticker-separator-{{ ai_gen_id }} {
+      font-size: {{ block.settings.font_size | times: 0.9 }}px;
+      padding: 0 {{ block.settings.separator_spacing | times: 0.8 }}px;
+    }
+  }
+{% endstyle %}
+
+<div class="ai-ticker-container-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-ticker-wrapper-{{ ai_gen_id }}">
+    <div class="ai-ticker-content-{{ ai_gen_id }}">
+      {% for i in (1..5) %}
+        {% assign text_key = 'ticker_text_' | append: i %}
+        {% assign ticker_text = block.settings[text_key] %}
+        {% if ticker_text != blank %}
+          <span class="ai-ticker-item-{{ ai_gen_id }}">{{ ticker_text }}</span>
+          {% unless forloop.last %}
+            <span class="ai-ticker-separator-{{ ai_gen_id }}">{{ block.settings.separator }}</span>
+          {% endunless %}
+        {% endif %}
+      {% endfor %}
+    </div>
+    
+    <div class="ai-ticker-content-{{ ai_gen_id }}">
+      {% for i in (1..5) %}
+        {% assign text_key = 'ticker_text_' | append: i %}
+        {% assign ticker_text = block.settings[text_key] %}
+        {% if ticker_text != blank %}
+          <span class="ai-ticker-item-{{ ai_gen_id }}">{{ ticker_text }}</span>
+          {% unless forloop.last %}
+            <span class="ai-ticker-separator-{{ ai_gen_id }}">{{ block.settings.separator }}</span>
+          {% endunless %}
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Horizontal ticker",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "ticker_text_1",
+      "label": "Ticker text 1",
+      "default": "🎁 Grab Exclusive Deals Before They're Gone!"
+    },
+    {
+      "type": "text",
+      "id": "ticker_text_2",
+      "label": "Ticker text 2",
+      "default": "✨ Flat 30% OFF on Bestsellers – For 24 hours Only!"
+    },
+    {
+      "type": "text",
+      "id": "ticker_text_3",
+      "label": "Ticker text 3",
+      "default": "🚚 Free Shipping"
+    },
+    {
+      "type": "text",
+      "id": "ticker_text_4",
+      "label": "Ticker text 4"
+    },
+    {
+      "type": "text",
+      "id": "ticker_text_5",
+      "label": "Ticker text 5"
+    },
+    {
+      "type": "text",
+      "id": "separator",
+      "label": "Separator",
+      "default": "•"
+    },
+    {
+      "type": "header",
+      "content": "Animation"
+    },
+    {
+      "type": "range",
+      "id": "speed",
+      "min": 2,
+      "max": 100,
+      "step": 2,
+      "unit": "s",
+      "label": "Animation speed",
+      "default": 20
+    },
+    {
+      "type": "checkbox",
+      "id": "pause_on_hover",
+      "label": "Pause on hover",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "separator_color",
+      "label": "Separator color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "font_size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size",
+      "default": 14
+    },
+    {
+      "type": "select",
+      "id": "font_weight",
+      "label": "Font weight",
+      "options": [
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ],
+      "default": "400"
+    },
+    {
+      "type": "select",
+      "id": "text_transform",
+      "label": "Text case",
+      "options": [
+        {
+          "value": "none",
+          "label": "Default"
+        },
+        {
+          "value": "uppercase",
+          "label": "Uppercase"
+        }
+      ],
+      "default": "none"
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_vertical",
+      "min": 5,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "label": "Vertical padding",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "item_spacing",
+      "min": 10,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "label": "Item spacing",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "separator_spacing",
+      "min": 5,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "label": "Separator spacing",
+      "default": 15
+    },
+    {
+      "type": "header",
+      "content": "Border"
+    },
+    {
+      "type": "range",
+      "id": "border_width",
+      "min": 0,
+      "max": 5,
+      "step": 1,
+      "unit": "px",
+      "label": "Border width",
+      "default": 0
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border color",
+      "default": "#e6e6e6"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Horizontal ticker"
+    }
+  ],
+  "tag": null
+}
+{% endschema %}
