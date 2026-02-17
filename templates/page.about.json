@@ -1,0 +1,672 @@
+{
+    "sections": {
+        "about_hero": {
+            "type": "section",
+            "blocks": {
+                "hero_heading": {
+                    "type": "text",
+                    "name": "Hero Heading",
+                    "settings": {
+                        "text": "<h1>About Glowwmint</h1>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "center",
+                        "type_preset": "h1",
+                        "font": "var(--font-primary--family)",
+                        "font_size": "",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                    },
+                    "blocks": {}
+                },
+                "hero_subtext": {
+                    "type": "text",
+                    "name": "Subtext",
+                    "settings": {
+                        "text": "<p>Your trusted destination for premium beauty, wellness, and lifestyle products. We believe everyone deserves to feel confident and radiant — naturally.</p>",
+                        "width": "100%",
+                        "max_width": "narrow",
+                        "alignment": "center",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1.1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 8,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                    },
+                    "blocks": {}
+                }
+            },
+            "block_order": [
+                "hero_heading",
+                "hero_subtext"
+            ],
+            "name": "About Hero",
+            "settings": {
+                "content_direction": "column",
+                "vertical_on_mobile": true,
+                "horizontal_alignment": "flex-start",
+                "vertical_alignment": "center",
+                "align_baseline": false,
+                "horizontal_alignment_flex_direction_column": "center",
+                "vertical_alignment_flex_direction_column": "center",
+                "gap": 12,
+                "section_width": "page-width",
+                "section_height": "",
+                "section_height_custom": 50,
+                "color_scheme": "",
+                "background_media": "none",
+                "video_position": "cover",
+                "background_image_position": "cover",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "toggle_overlay": false,
+                "overlay_color": "#00000026",
+                "overlay_style": "solid",
+                "gradient_direction": "to top",
+                "padding-block-start": 60,
+                "padding-block-end": 40
+            }
+        },
+        "about_story": {
+            "type": "section",
+            "blocks": {
+                "story_image": {
+                    "type": "image",
+                    "settings": {
+                        "image": "shopify://shop_images/design-a-minimalist-and-professional-logo-for-a-beauty-and-wellness-brand-named-glowwmint-the-logo-should-feature-two-green-leaves-forming-a-subtle-crown-or-sprout-shape-above-the-bra.png",
+                        "link": "",
+                        "image_ratio": "square",
+                        "width": "fill",
+                        "custom_width": 100,
+                        "width_mobile": "fill",
+                        "custom_width_mobile": 100,
+                        "height": "fit",
+                        "border": "none",
+                        "border_width": 1,
+                        "border_opacity": 100,
+                        "border_radius": 16,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                    },
+                    "blocks": {}
+                },
+                "story_content": {
+                    "type": "group",
+                    "settings": {
+                        "link": "",
+                        "open_in_new_tab": false,
+                        "content_direction": "column",
+                        "vertical_on_mobile": true,
+                        "horizontal_alignment": "flex-start",
+                        "vertical_alignment": "center",
+                        "align_baseline": false,
+                        "horizontal_alignment_flex_direction_column": "flex-start",
+                        "vertical_alignment_flex_direction_column": "center",
+                        "gap": 16,
+                        "width": "fill",
+                        "custom_width": 100,
+                        "width_mobile": "fill",
+                        "custom_width_mobile": 100,
+                        "height": "fit",
+                        "custom_height": 100,
+                        "inherit_color_scheme": true,
+                        "color_scheme": "",
+                        "background_media": "none",
+                        "video_position": "cover",
+                        "background_image_position": "cover",
+                        "border": "none",
+                        "border_width": 1,
+                        "border_opacity": 100,
+                        "border_radius": 0,
+                        "placeholder": "",
+                        "toggle_overlay": false,
+                        "overlay_color": "#00000026",
+                        "overlay_style": "solid",
+                        "gradient_direction": "to top",
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                    },
+                    "blocks": {
+                        "story_title": {
+                            "type": "text",
+                            "name": "Story Title",
+                            "settings": {
+                                "text": "<h2>Our Story</h2>",
+                                "width": "100%",
+                                "max_width": "normal",
+                                "alignment": "left",
+                                "type_preset": "h3",
+                                "font": "var(--font-primary--family)",
+                                "font_size": "",
+                                "line_height": "normal",
+                                "letter_spacing": "normal",
+                                "case": "none",
+                                "wrap": "pretty",
+                                "color": "",
+                                "background": false,
+                                "background_color": "#00000026",
+                                "corner_radius": 0,
+                                "padding-block-start": 0,
+                                "padding-block-end": 0,
+                                "padding-inline-start": 0,
+                                "padding-inline-end": 0
+                            },
+                            "blocks": {}
+                        },
+                        "story_text": {
+                            "type": "text",
+                            "name": "Story Text",
+                            "settings": {
+                                "text": "<p>Glowwmint was born from a simple belief — that self-care should be accessible, affordable, and enjoyable for everyone. We started our journey with a passion for curating the best beauty and wellness products that make a real difference in people's daily routines.</p><p><br/>From skincare essentials to lifestyle products, we handpick every item for its quality, effectiveness, and value. Our team is dedicated to bringing you products from trusted brands that align with our commitment to authenticity and care.</p><p><br/>Today, Glowwmint serves thousands of happy customers across India, and we're just getting started. Every order we ship is a promise — a promise of quality, trust, and the Glowwmint glow.</p>",
+                                "width": "100%",
+                                "max_width": "normal",
+                                "alignment": "left",
+                                "type_preset": "rte",
+                                "font": "var(--font-body--family)",
+                                "font_size": "1rem",
+                                "line_height": "normal",
+                                "letter_spacing": "normal",
+                                "case": "none",
+                                "wrap": "pretty",
+                                "color": "var(--color-foreground)",
+                                "background": false,
+                                "background_color": "#00000026",
+                                "corner_radius": 0,
+                                "padding-block-start": 0,
+                                "padding-block-end": 0,
+                                "padding-inline-start": 0,
+                                "padding-inline-end": 0
+                            },
+                            "blocks": {}
+                        },
+                        "story_tagline": {
+                            "type": "text",
+                            "name": "Tagline",
+                            "settings": {
+                                "text": "<p>✨ <strong>Glowwmint — Your Glow Ritual.</strong></p>",
+                                "width": "100%",
+                                "max_width": "normal",
+                                "alignment": "left",
+                                "type_preset": "rte",
+                                "font": "var(--font-body--family)",
+                                "font_size": "1.1rem",
+                                "line_height": "normal",
+                                "letter_spacing": "normal",
+                                "case": "none",
+                                "wrap": "pretty",
+                                "color": "var(--color-foreground)",
+                                "background": false,
+                                "background_color": "#00000026",
+                                "corner_radius": 0,
+                                "padding-block-start": 8,
+                                "padding-block-end": 0,
+                                "padding-inline-start": 0,
+                                "padding-inline-end": 0
+                            },
+                            "blocks": {}
+                        }
+                    },
+                    "block_order": [
+                        "story_title",
+                        "story_text",
+                        "story_tagline"
+                    ]
+                }
+            },
+            "block_order": [
+                "story_image",
+                "story_content"
+            ],
+            "name": "Our Story",
+            "settings": {
+                "content_direction": "row",
+                "vertical_on_mobile": true,
+                "horizontal_alignment": "flex-start",
+                "vertical_alignment": "center",
+                "align_baseline": false,
+                "horizontal_alignment_flex_direction_column": "flex-start",
+                "vertical_alignment_flex_direction_column": "center",
+                "gap": 48,
+                "section_width": "page-width",
+                "section_height": "",
+                "section_height_custom": 50,
+                "color_scheme": "",
+                "background_media": "none",
+                "video_position": "cover",
+                "background_image_position": "cover",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "toggle_overlay": false,
+                "overlay_color": "#00000026",
+                "overlay_style": "solid",
+                "gradient_direction": "to top",
+                "padding-block-start": 24,
+                "padding-block-end": 48
+            }
+        },
+        "about_values": {
+            "type": "section",
+            "blocks": {
+                "values_heading": {
+                    "type": "text",
+                    "name": "Values Heading",
+                    "settings": {
+                        "text": "<h2>What We Stand For</h2>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "center",
+                        "type_preset": "h3",
+                        "font": "var(--font-primary--family)",
+                        "font_size": "",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 24,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                    },
+                    "blocks": {}
+                },
+                "values_grid": {
+                    "type": "group",
+                    "name": "Values Grid",
+                    "settings": {
+                        "content_direction": "row",
+                        "vertical_on_mobile": true,
+                        "horizontal_alignment": "flex-start",
+                        "vertical_alignment": "flex-start",
+                        "align_baseline": false,
+                        "horizontal_alignment_flex_direction_column": "flex-start",
+                        "vertical_alignment_flex_direction_column": "center",
+                        "gap": 24,
+                        "width": "fill",
+                        "custom_width": 100,
+                        "width_mobile": "fill",
+                        "custom_width_mobile": 100,
+                        "height": "fit",
+                        "custom_height": 100,
+                        "inherit_color_scheme": true,
+                        "color_scheme": "",
+                        "background_media": "none",
+                        "video_position": "cover",
+                        "background_image_position": "cover",
+                        "border": "none",
+                        "border_width": 1,
+                        "border_opacity": 100,
+                        "border_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                    },
+                    "blocks": {
+                        "value_quality": {
+                            "type": "group",
+                            "name": "Quality First",
+                            "settings": {
+                                "content_direction": "column",
+                                "vertical_on_mobile": true,
+                                "horizontal_alignment": "flex-start",
+                                "vertical_alignment": "center",
+                                "horizontal_alignment_flex_direction_column": "center",
+                                "vertical_alignment_flex_direction_column": "center",
+                                "gap": 8,
+                                "width": "fill",
+                                "custom_width": 33,
+                                "width_mobile": "fill",
+                                "custom_width_mobile": 100,
+                                "height": "fit",
+                                "inherit_color_scheme": true,
+                                "color_scheme": "",
+                                "background_media": "none",
+                                "border": "solid",
+                                "border_width": 1,
+                                "border_opacity": 8,
+                                "border_radius": 12,
+                                "padding-block-start": 32,
+                                "padding-block-end": 32,
+                                "padding-inline-start": 24,
+                                "padding-inline-end": 24
+                            },
+                            "blocks": {
+                                "quality_icon": {
+                                    "type": "icon",
+                                    "settings": {
+                                        "icon": "star",
+                                        "width": 36
+                                    }
+                                },
+                                "quality_title": {
+                                    "type": "text",
+                                    "settings": {
+                                        "text": "<p><strong>Quality First</strong></p>",
+                                        "width": "100%",
+                                        "alignment": "center",
+                                        "type_preset": "h5"
+                                    }
+                                },
+                                "quality_desc": {
+                                    "type": "text",
+                                    "settings": {
+                                        "text": "<p>Every product goes through strict quality checks to ensure you receive only the best.</p>",
+                                        "width": "100%",
+                                        "alignment": "center",
+                                        "type_preset": "rte"
+                                    }
+                                }
+                            },
+                            "block_order": [
+                                "quality_icon",
+                                "quality_title",
+                                "quality_desc"
+                            ]
+                        },
+                        "value_trust": {
+                            "type": "group",
+                            "name": "Trust & Transparency",
+                            "settings": {
+                                "content_direction": "column",
+                                "vertical_on_mobile": true,
+                                "horizontal_alignment": "flex-start",
+                                "vertical_alignment": "center",
+                                "horizontal_alignment_flex_direction_column": "center",
+                                "vertical_alignment_flex_direction_column": "center",
+                                "gap": 8,
+                                "width": "fill",
+                                "custom_width": 33,
+                                "width_mobile": "fill",
+                                "custom_width_mobile": 100,
+                                "height": "fit",
+                                "inherit_color_scheme": true,
+                                "color_scheme": "",
+                                "background_media": "none",
+                                "border": "solid",
+                                "border_width": 1,
+                                "border_opacity": 8,
+                                "border_radius": 12,
+                                "padding-block-start": 32,
+                                "padding-block-end": 32,
+                                "padding-inline-start": 24,
+                                "padding-inline-end": 24
+                            },
+                            "blocks": {
+                                "trust_icon": {
+                                    "type": "icon",
+                                    "settings": {
+                                        "icon": "heart",
+                                        "width": 36
+                                    }
+                                },
+                                "trust_title": {
+                                    "type": "text",
+                                    "settings": {
+                                        "text": "<p><strong>Trust & Transparency</strong></p>",
+                                        "width": "100%",
+                                        "alignment": "center",
+                                        "type_preset": "h5"
+                                    }
+                                },
+                                "trust_desc": {
+                                    "type": "text",
+                                    "settings": {
+                                        "text": "<p>Honest pricing, real reviews, and genuine products. What you see is what you get.</p>",
+                                        "width": "100%",
+                                        "alignment": "center",
+                                        "type_preset": "rte"
+                                    }
+                                }
+                            },
+                            "block_order": [
+                                "trust_icon",
+                                "trust_title",
+                                "trust_desc"
+                            ]
+                        },
+                        "value_care": {
+                            "type": "group",
+                            "name": "Customer Care",
+                            "settings": {
+                                "content_direction": "column",
+                                "vertical_on_mobile": true,
+                                "horizontal_alignment": "flex-start",
+                                "vertical_alignment": "center",
+                                "horizontal_alignment_flex_direction_column": "center",
+                                "vertical_alignment_flex_direction_column": "center",
+                                "gap": 8,
+                                "width": "fill",
+                                "custom_width": 33,
+                                "width_mobile": "fill",
+                                "custom_width_mobile": 100,
+                                "height": "fit",
+                                "inherit_color_scheme": true,
+                                "color_scheme": "",
+                                "background_media": "none",
+                                "border": "solid",
+                                "border_width": 1,
+                                "border_opacity": 8,
+                                "border_radius": 12,
+                                "padding-block-start": 32,
+                                "padding-block-end": 32,
+                                "padding-inline-start": 24,
+                                "padding-inline-end": 24
+                            },
+                            "blocks": {
+                                "care_icon": {
+                                    "type": "icon",
+                                    "settings": {
+                                        "icon": "silhouette",
+                                        "width": 36
+                                    }
+                                },
+                                "care_title": {
+                                    "type": "text",
+                                    "settings": {
+                                        "text": "<p><strong>Customer Care</strong></p>",
+                                        "width": "100%",
+                                        "alignment": "center",
+                                        "type_preset": "h5"
+                                    }
+                                },
+                                "care_desc": {
+                                    "type": "text",
+                                    "settings": {
+                                        "text": "<p>Our support team is always here to help. Your satisfaction is our top priority.</p>",
+                                        "width": "100%",
+                                        "alignment": "center",
+                                        "type_preset": "rte"
+                                    }
+                                }
+                            },
+                            "block_order": [
+                                "care_icon",
+                                "care_title",
+                                "care_desc"
+                            ]
+                        }
+                    },
+                    "block_order": [
+                        "value_quality",
+                        "value_trust",
+                        "value_care"
+                    ]
+                }
+            },
+            "block_order": [
+                "values_heading",
+                "values_grid"
+            ],
+            "name": "Our Values",
+            "settings": {
+                "content_direction": "column",
+                "vertical_on_mobile": true,
+                "horizontal_alignment": "flex-start",
+                "vertical_alignment": "center",
+                "align_baseline": false,
+                "horizontal_alignment_flex_direction_column": "center",
+                "vertical_alignment_flex_direction_column": "center",
+                "gap": 12,
+                "section_width": "page-width",
+                "section_height": "",
+                "section_height_custom": 50,
+                "color_scheme": "scheme-d6bab010-31c8-4443-9bf8-cf84ca02287b",
+                "background_media": "none",
+                "video_position": "cover",
+                "background_image_position": "cover",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "toggle_overlay": false,
+                "overlay_color": "#00000026",
+                "overlay_style": "solid",
+                "gradient_direction": "to top",
+                "padding-block-start": 48,
+                "padding-block-end": 48
+            }
+        },
+        "about_cta": {
+            "type": "section",
+            "blocks": {
+                "cta_heading": {
+                    "type": "text",
+                    "name": "CTA Heading",
+                    "settings": {
+                        "text": "<h2>Ready to Glow?</h2>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "center",
+                        "type_preset": "h3",
+                        "font": "var(--font-primary--family)",
+                        "font_size": "",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                    },
+                    "blocks": {}
+                },
+                "cta_text": {
+                    "type": "text",
+                    "name": "CTA Text",
+                    "settings": {
+                        "text": "<p>Explore our curated collection of beauty, wellness, and lifestyle products. Free shipping on all orders!</p>",
+                        "width": "100%",
+                        "max_width": "narrow",
+                        "alignment": "center",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 8,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                    },
+                    "blocks": {}
+                },
+                "cta_button": {
+                    "type": "button",
+                    "settings": {
+                        "label": "Shop Now",
+                        "link": "shopify://collections/all",
+                        "open_in_new_tab": false,
+                        "style_class": "button-secondary",
+                        "width": "fit-content",
+                        "custom_width": 100,
+                        "width_mobile": "fit-content",
+                        "custom_width_mobile": 100
+                    },
+                    "blocks": {}
+                }
+            },
+            "block_order": [
+                "cta_heading",
+                "cta_text",
+                "cta_button"
+            ],
+            "name": "CTA Section",
+            "settings": {
+                "content_direction": "column",
+                "vertical_on_mobile": true,
+                "horizontal_alignment": "flex-start",
+                "vertical_alignment": "center",
+                "align_baseline": false,
+                "horizontal_alignment_flex_direction_column": "center",
+                "vertical_alignment_flex_direction_column": "center",
+                "gap": 16,
+                "section_width": "page-width",
+                "section_height": "",
+                "section_height_custom": 50,
+                "color_scheme": "",
+                "background_media": "none",
+                "video_position": "cover",
+                "background_image_position": "cover",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "toggle_overlay": false,
+                "overlay_color": "#00000026",
+                "overlay_style": "solid",
+                "gradient_direction": "to top",
+                "padding-block-start": 48,
+                "padding-block-end": 60
+            }
+        }
+    },
+    "order": [
+        "about_hero",
+        "about_story",
+        "about_values",
+        "about_cta"
+    ]
+}

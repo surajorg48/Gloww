@@ -1,12 +1,55 @@
 /* ============================================================
    GLOWWMINT — Premium Beauty & Wellness Custom Styles
-   Brand Colors: Mint Green (#2ECC71), Deep Forest (#165230), 
-   Cream (#F9FBFA), Soft Sage (#E9F3EF)
+   Performance-optimized: Zero animations, zero transitions
+   Brand Colors: Mint Green (#2ECC71), Deep Forest (#165230)
    ============================================================ */
 
-/* === GLOBAL BRAND ENHANCEMENTS === */
+/* === GLOBAL OVERFLOW FIX === */
+html,
+body {
+  overflow-x: hidden !important;
+  max-width: 100vw;
+}
+
+* {
+  max-width: 100%;
+}
+
+/* Exclude specific elements that need their own max-width */
+img,
+video,
+iframe,
+canvas,
+svg,
+input,
+textarea,
+select,
+button,
+.section,
+.page-width-wide,
+.page-width-normal,
+.page-width-narrow {
+  max-width: 100%;
+}
+
+/* Ensure sections never cause overflow */
+.shopify-section {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+.section {
+  overflow-x: hidden;
+}
+
+/* Fix any full-width elements that might overflow */
+.section--full-width>*,
+.section--full-width.section--full-width-margin>* {
+  max-width: 100vw;
+}
+
+/* === BRAND PALETTE VARIABLES === */
 :root {
-  /* Brand palette */
   --glow-mint: #2ECC71;
   --glow-mint-light: #A8E6CF;
   --glow-mint-dark: #165230;
@@ -14,22 +57,18 @@
   --glow-cream: #F9FBFA;
   --glow-sage: #E9F3EF;
   --glow-gold: #D4A853;
-  --glow-rose: #F4E1D2;
   --glow-charcoal: #1a1a1a;
   --glow-soft-white: #FEFEFE;
-  
-  /* Smooth transitions */
-  --glow-transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  --glow-transition-slow: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   --glow-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
   --glow-shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
   --glow-shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.12);
-  --glow-shadow-glow: 0 0 20px rgba(46, 204, 113, 0.15);
 }
 
-/* === SMOOTH SCROLL === */
-html {
-  scroll-behavior: smooth;
+/* === TEXT RENDERING === */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 /* === SELECTION COLOR === */
@@ -38,57 +77,50 @@ html {
   color: var(--glow-charcoal);
 }
 
-/* === BODY ENHANCEMENTS === */
-body {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
+/* === ANNOUNCEMENT BAR — REMOVE TOP GAP === */
+#header-group {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
 }
 
-/* === ANNOUNCEMENT BAR ENHANCEMENT === */
-.announcement-bar,
+#header-group>.shopify-section:first-child {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+#header-group .section {
+  margin-top: 0 !important;
+  padding-block-start: 0 !important;
+}
+
+/* The announcement bar ticker block itself */
 [data-block-type="ai_gen_block_bdb0f11"] {
   letter-spacing: 0.05em;
 }
 
-/* === HEADER ENHANCEMENTS === */
+/* === HEADER — CLEAN STYLING === */
 .header {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  transition: var(--glow-transition);
 }
 
 .header.scrolled-past {
   box-shadow: var(--glow-shadow-sm);
 }
 
-/* Logo subtle animation */
-.header-logo img,
-.header-logo svg {
-  transition: transform 0.3s ease;
-}
-
-.header-logo:hover img,
-.header-logo:hover svg {
-  transform: scale(1.03);
-}
-
-/* Navigation link hover effects */
+/* Nav link underline on hover — instant, no animation */
 .header-menu__link {
   position: relative;
-  transition: var(--glow-transition);
 }
 
 .header-menu__link::after {
   content: '';
   position: absolute;
   bottom: -2px;
-  left: 50%;
+  left: 0;
   width: 0;
   height: 2px;
   background: var(--glow-mint);
-  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  transform: translateX(-50%);
   border-radius: 1px;
 }
 
@@ -96,31 +128,7 @@ body {
   width: 100%;
 }
 
-/* Cart icon badge pulse */
-.cart-icon__count {
-  animation: subtlePulse 2s ease-in-out infinite;
-}
-
-@keyframes subtlePulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-}
-
-/* === HERO SECTION ENHANCEMENTS === */
-.section--hero .section-content-wrapper,
-[data-section-type="hero"] {
-  overflow: hidden;
-}
-
-.section--hero img {
-  transition: transform 8s ease;
-}
-
-.section--hero:hover img {
-  transform: scale(1.03);
-}
-
-/* Hero text animations */
+/* === HERO SECTION === */
 .section--hero h1,
 .section--hero h2,
 .section--hero .h1,
@@ -128,104 +136,27 @@ body {
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* === SECTION FADE-IN ANIMATIONS === */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeInScale {
-  from {
-    opacity: 0;
-    transform: scale(0.97);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideInRight {
-  from {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes shimmer {
-  0% { background-position: -200% center; }
-  100% { background-position: 200% center; }
-}
-
-/* Animated sections */
-.shopify-section {
-  animation: fadeInUp 0.6s ease-out both;
-}
-
-.shopify-section:nth-child(2) { animation-delay: 0.1s; }
-.shopify-section:nth-child(3) { animation-delay: 0.15s; }
-.shopify-section:nth-child(4) { animation-delay: 0.2s; }
-.shopify-section:nth-child(5) { animation-delay: 0.25s; }
-
-/* === PRODUCT CARD ENHANCEMENTS === */
+/* === PRODUCT CARD — CLEAN STYLING === */
 .product-card {
   border-radius: 12px;
   overflow: hidden;
-  transition: var(--glow-transition);
 }
 
 .product-card:hover {
   box-shadow: var(--glow-shadow-md);
 }
 
-/* Product image hover zoom */
 .product-card .card-gallery,
 .product-card .product-card__image-wrapper {
   overflow: hidden;
   border-radius: 12px;
 }
 
-.product-card .card-gallery img,
-.product-card .product-card__image-wrapper img {
-  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.product-card:hover .card-gallery img,
-.product-card:hover .product-card__image-wrapper img {
-  transform: scale(1.06);
-}
-
-/* Product title on card */
-.product-card .product-title {
-  transition: color 0.2s ease;
-}
-
 .product-card:hover .product-title {
   color: var(--glow-mint-dark);
 }
 
-/* Sale badge enhancement */
+/* === BADGES === */
 .badge--sale {
   background: linear-gradient(135deg, #e74c3c, #c0392b) !important;
   color: white !important;
@@ -247,7 +178,34 @@ body {
   text-transform: uppercase;
 }
 
-/* === PRODUCT PAGE ENHANCEMENTS === */
+/* === PRODUCT PAGE — REMOVE TOP SPACE === */
+.product-information {
+  padding-block-start: 0 !important;
+}
+
+.product-information .section {
+  padding-block-start: 0 !important;
+}
+
+/* Remove the divider gap above product info */
+.template--product .shopify-section:first-child .section {
+  padding-block-start: 0 !important;
+  padding-block-end: 0 !important;
+  min-height: 0 !important;
+}
+
+/* Product details top padding fix */
+[data-section-type="product-information"] {
+  padding-block-start: 0 !important;
+}
+
+/* Product media gallery — no top gap */
+._product-media-gallery,
+.product-information .media-gallery {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
 .product-information .media-gallery img {
   border-radius: 8px;
 }
@@ -263,30 +221,15 @@ body {
   opacity: 0.5;
 }
 
-/* Add to cart button enhancement */
+/* Add to cart button */
 .product-form .button,
 .product-form [type="submit"] {
-  position: relative;
-  overflow: hidden;
-  transition: var(--glow-transition);
   font-weight: 600;
   letter-spacing: 0.04em;
 }
 
-.product-form .button:hover,
-.product-form [type="submit"]:hover {
-  transform: translateY(-1px);
-  box-shadow: var(--glow-shadow-md);
-}
-
-.product-form .button:active,
-.product-form [type="submit"]:active {
-  transform: translateY(0);
-}
-
 /* Variant buttons */
 .variant-picker__button {
-  transition: var(--glow-transition);
   border-radius: 8px !important;
 }
 
@@ -299,18 +242,16 @@ body {
   box-shadow: 0 0 0 1px var(--glow-charcoal);
 }
 
-/* === COLLECTION PAGE ENHANCEMENTS === */
+/* === COLLECTION PAGE === */
 .collection-heading h1,
 .collection-heading h2 {
   position: relative;
   display: inline-block;
 }
 
-/* Filter pills */
 .facets__button,
 .facets__pill {
   border-radius: 20px !important;
-  transition: var(--glow-transition);
 }
 
 .facets__button:hover,
@@ -323,25 +264,22 @@ body {
 .divider-section hr {
   border: none;
   height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(0, 0, 0, 0.08) 20%,
-    rgba(0, 0, 0, 0.08) 80%,
-    transparent
-  );
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(0, 0, 0, 0.08) 20%,
+      rgba(0, 0, 0, 0.08) 80%,
+      transparent);
 }
 
-/* === ABOUT US / IMAGE WITH TEXT ENHANCEMENT === */
+/* === IMAGE WITH TEXT (ABOUT US) === */
 .section .image-with-text-image {
   border-radius: 16px;
   overflow: hidden;
 }
 
-/* === FAQ / ACCORDION ENHANCEMENTS === */
+/* === FAQ / ACCORDION === */
 .accordion-custom summary,
 .accordion__heading {
-  transition: var(--glow-transition);
   padding: 16px 0;
   border-radius: 0;
 }
@@ -357,116 +295,61 @@ body {
   font-weight: 600;
 }
 
-.accordion-custom .accordion__content {
-  animation: fadeInUp 0.3s ease-out;
-}
-
 /* === BUTTONS — GLOBAL === */
 .button,
 .button-secondary,
 button.button {
   border-radius: 10px;
-  transition: var(--glow-transition);
   font-weight: 600;
   letter-spacing: 0.02em;
-  position: relative;
-  overflow: hidden;
 }
 
-.button:hover,
-.button-secondary:hover {
-  transform: translateY(-1px);
-  box-shadow: var(--glow-shadow-sm);
-}
-
-.button:active,
-.button-secondary:active {
-  transform: translateY(0);
-  box-shadow: none;
-}
-
-/* Primary button shimmer effect */
-.button::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.1),
-    transparent
-  );
-  transition: left 0.5s ease;
-}
-
-.button:hover::before {
-  left: 100%;
-}
-
-/* === FOOTER ENHANCEMENTS === */
+/* === FOOTER === */
 .footer .section {
   border-top: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .footer .email-signup input {
   border-radius: 30px !important;
-  transition: var(--glow-transition);
 }
 
 .footer .email-signup input:focus {
   box-shadow: 0 0 0 2px var(--glow-mint);
 }
 
-/* Social icons */
 .footer .social-icons a,
 .footer-social-icons a {
-  transition: var(--glow-transition);
   opacity: 0.7;
 }
 
 .footer .social-icons a:hover,
 .footer-social-icons a:hover {
   opacity: 1;
-  transform: translateY(-2px);
 }
 
-/* === CART PAGE ENHANCEMENTS === */
+/* === CART PAGE === */
 .cart__items .cart-item {
   border-radius: 8px;
-  transition: var(--glow-transition);
-}
-
-.cart__items .cart-item:hover {
-  background-color: rgba(0, 0, 0, 0.01);
 }
 
 .cart__items .cart-item img {
   border-radius: 8px;
 }
 
-/* Quantity selector */
 .quantity-selector {
   border-radius: 8px !important;
   overflow: hidden;
-}
-
-.quantity-selector button {
-  transition: var(--glow-transition);
 }
 
 .quantity-selector button:hover {
   background-color: var(--glow-sage);
 }
 
-/* === CONTACT FORM ENHANCEMENTS === */
+/* === CONTACT FORM === */
 .contact-form input,
 .contact-form textarea,
 .contact-form select {
   border-radius: 8px !important;
-  transition: var(--glow-transition);
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
@@ -485,7 +368,7 @@ button.button {
   margin-bottom: 6px;
 }
 
-/* === 404 PAGE ENHANCEMENT === */
+/* === 404 PAGE === */
 .template-404 .section {
   text-align: center;
 }
@@ -494,12 +377,11 @@ button.button {
   font-size: clamp(2rem, 5vw, 3.5rem);
 }
 
-/* === SEARCH ENHANCEMENTS === */
+/* === SEARCH === */
 .search-input,
 .predictive-search input {
   border-radius: 30px !important;
   padding: 12px 20px !important;
-  transition: var(--glow-transition);
 }
 
 .search-input:focus,
@@ -513,48 +395,17 @@ button.button {
   overflow: hidden;
 }
 
-/* === TRUST BADGES / ICONS WITH TEXT === */
-.section .icon-with-text,
-.section [data-block-type="group"] .icon svg {
-  transition: var(--glow-transition);
-}
-
-.section [data-block-type="group"]:hover .icon svg {
-  transform: scale(1.08);
-  color: var(--glow-mint-dark);
-}
-
 /* === COLLECTION LIST / GRID === */
 .collection-card {
   border-radius: 12px;
   overflow: hidden;
-  transition: var(--glow-transition);
 }
 
 .collection-card:hover {
   box-shadow: var(--glow-shadow-md);
 }
 
-.collection-card img {
-  transition: transform 0.5s ease;
-}
-
-.collection-card:hover img {
-  transform: scale(1.04);
-}
-
 /* === FORM ELEMENTS GLOBAL === */
-input[type="text"],
-input[type="email"],
-input[type="password"],
-input[type="tel"],
-input[type="number"],
-input[type="search"],
-textarea,
-select {
-  transition: var(--glow-transition);
-}
-
 input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="password"]:focus,
@@ -585,38 +436,10 @@ select:focus {
   background: rgba(0, 0, 0, 0.25);
 }
 
-/* === LOADING SKELETON SHIMMER === */
-@keyframes skeletonShimmer {
-  0% {
-    background-position: -200px 0;
-  }
-  100% {
-    background-position: calc(200px + 100%) 0;
-  }
-}
-
-.skeleton {
-  background: linear-gradient(
-    90deg,
-    rgba(0, 0, 0, 0.04) 25%,
-    rgba(0, 0, 0, 0.08) 50%,
-    rgba(0, 0, 0, 0.04) 75%
-  );
-  background-size: 200px 100%;
-  animation: skeletonShimmer 1.5s ease-in-out infinite;
-}
-
-/* === RESPONSIVE REFINEMENTS === */
+/* === RESPONSIVE === */
 
 /* Mobile (up to 749px) */
 @media screen and (max-width: 749px) {
-  /* Tighter spacing on mobile */
-  .section {
-    padding-left: 12px;
-    padding-right: 12px;
-  }
-
-  /* Smaller product card radius on mobile */
   .product-card {
     border-radius: 8px;
   }
@@ -626,7 +449,6 @@ select:focus {
     border-radius: 8px;
   }
 
-  /* Mobile button full width */
   .product-form .button,
   .product-form [type="submit"] {
     width: 100%;
@@ -634,28 +456,15 @@ select:focus {
     font-size: 1rem;
   }
 
-  /* Mobile collection cards */
   .collection-card {
     border-radius: 8px;
   }
 
-  /* Stack trust badges nicely */
-  .trust-badges {
-    gap: 16px;
-  }
-
-  /* Mobile FAQ */
   .accordion-custom summary {
     padding: 14px 0;
     font-size: 0.9375rem;
   }
 
-  /* Footer mobile */
-  .footer .email-signup {
-    flex-direction: column;
-  }
-
-  /* Hero text size on mobile */
   .section--hero h1,
   .section--hero .h1 {
     font-size: clamp(1.75rem, 6vw, 2.5rem);
@@ -669,42 +478,13 @@ select:focus {
   }
 }
 
-/* Desktop (1000px+) */
-@media screen and (min-width: 1000px) {
-  /* Larger hover effects on desktop */
-  .product-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--glow-shadow-lg);
-  }
-
-  /* More pronounced collection card hover */
-  .collection-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--glow-shadow-lg);
-  }
-}
-
 /* === PRINT STYLES === */
 @media print {
+
   .header,
   .footer,
   .announcement-bar {
     display: none !important;
-  }
-}
-
-/* === REDUCED MOTION === */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-  
-  html {
-    scroll-behavior: auto;
   }
 }
 
@@ -716,30 +496,56 @@ select:focus {
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
-/* === IMAGE LAZY LOAD FADE-IN === */
-img[loading="lazy"] {
-  opacity: 0;
-  transition: opacity 0.4s ease;
+/* === TOOLTIP / POPOVER === */
+[popover],
+.popover,
+.anchored-popover {
+  border-radius: 12px !important;
+  box-shadow: var(--glow-shadow-lg) !important;
+  border: 1px solid rgba(0, 0, 0, 0.06) !important;
 }
 
-img[loading="lazy"].loaded,
-img[loading="lazy"][src] {
-  opacity: 1;
+/* === DRAWER === */
+@media screen and (min-width: 750px) {
+  .drawer {
+    border-radius: 16px 0 0 16px;
+  }
 }
 
-/* Fix: Make sure all images are visible even without JS */
-noscript img {
-  opacity: 1 !important;
+/* === NOTIFICATIONS === */
+.notification,
+.toast {
+  border-radius: 10px;
+  box-shadow: var(--glow-shadow-lg);
 }
 
-/* === PAGE TRANSITIONS === */
-.content-for-layout {
-  animation: fadeInUp 0.4s ease-out;
+/* === BREADCRUMBS === */
+.breadcrumbs {
+  font-size: 0.8125rem;
+  opacity: 0.7;
+  letter-spacing: 0.02em;
 }
 
-/* === MARQUEE ENHANCEMENTS === */
-.marquee {
-  letter-spacing: 0.04em;
+.breadcrumbs a:hover {
+  color: var(--glow-mint-dark);
+}
+
+/* === BLOG & ARTICLE === */
+.article-card {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.article-card:hover {
+  box-shadow: var(--glow-shadow-md);
+}
+
+/* === PASSWORD PAGE === */
+.template-password .section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* === GIFT CARD PAGE === */
@@ -754,89 +560,78 @@ noscript img {
   margin: 0 auto;
 }
 
-/* === PASSWORD PAGE ENHANCEMENTS === */
-.template-password .section {
-  min-height: 100vh;
+/* === ABOUT US PAGE CUSTOM STYLES === */
+.about-us-hero {
+  text-align: center;
+  padding: 60px 0 40px;
+}
+
+.about-us-hero h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 16px;
+}
+
+.about-us-hero p {
+  max-width: 600px;
+  margin: 0 auto;
+  opacity: 0.85;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+/* Trust badges styling */
+.trust-badges-section {
+  padding: 40px 0;
+  text-align: center;
+}
+
+.trust-badges-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 32px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.trust-badge-item {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-}
-
-/* === BLOG ENHANCEMENTS === */
-.article-card {
+  gap: 12px;
+  padding: 24px 16px;
   border-radius: 12px;
-  overflow: hidden;
-  transition: var(--glow-transition);
+  background: var(--glow-cream);
+  border: 1px solid rgba(0, 0, 0, 0.04);
 }
 
-.article-card:hover {
-  box-shadow: var(--glow-shadow-md);
-  transform: translateY(-2px);
-}
-
-.article-card img {
-  transition: transform 0.5s ease;
-}
-
-.article-card:hover img {
-  transform: scale(1.04);
-}
-
-/* === BREADCRUMBS (if present) === */
-.breadcrumbs {
-  font-size: 0.8125rem;
-  opacity: 0.7;
-  letter-spacing: 0.02em;
-}
-
-.breadcrumbs a {
-  transition: color 0.2s ease;
-}
-
-.breadcrumbs a:hover {
+.trust-badge-item svg {
+  width: 40px;
+  height: 40px;
   color: var(--glow-mint-dark);
 }
 
-/* === TOOLTIP / POPOVER ENHANCEMENTS === */
-[popover],
-.popover,
-.anchored-popover {
-  border-radius: 12px !important;
-  box-shadow: var(--glow-shadow-lg) !important;
-  border: 1px solid rgba(0, 0, 0, 0.06) !important;
+.trust-badge-item h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
 }
 
-/* === DRAWER ENHANCEMENTS === */
-.drawer {
-  border-radius: 0;
+.trust-badge-item p {
+  font-size: 0.875rem;
+  opacity: 0.7;
+  margin: 0;
 }
 
-@media screen and (min-width: 750px) {
-  .drawer {
-    border-radius: 16px 0 0 16px;
-  }
+/* === WHATSAPP WIDGET STYLING === */
+.whatsapp-widget,
+[data-app="dondy"],
+.dondy-whatsapp-widget {
+  z-index: 999 !important;
 }
 
-/* === NOTIFICATION / TOAST === */
-.notification,
-.toast {
-  border-radius: 10px;
-  box-shadow: var(--glow-shadow-lg);
-  animation: fadeInUp 0.3s ease-out;
-}
-
-/* === LINK HOVER EFFECTS (global) === */
-a:not(.button):not(.button-secondary) {
-  transition: color 0.2s ease;
-}
-
-/* === IMAGE BORDER RADIUS CONSISTENCY === */
-.section img:not(.header img):not(.footer img) {
-  border-radius: inherit;
-}
-
-/* === HIGH CONTRAST MODE SUPPORT === */
+/* === HIGH CONTRAST MODE === */
 @media (forced-colors: active) {
+
   .button,
   .button-secondary {
     border: 2px solid ButtonText;
